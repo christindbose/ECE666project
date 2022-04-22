@@ -1,0 +1,1 @@
+board.cache_hierarchy.ruby_system.l1_controllers.L1Dcache.m_demand_misses    122259593                       # Number of cache demand misses (Unspecified)

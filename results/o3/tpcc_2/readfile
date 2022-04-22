@@ -1,0 +1,1 @@
+m5 exit;m5 resetstats;cd /home/gem5/sysbench-tpcc && source ../run_tpcc_sweep.sh 2;m5 exit;
