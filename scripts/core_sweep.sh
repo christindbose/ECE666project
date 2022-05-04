@@ -1,8 +1,8 @@
 #!/bin/bash
 
-ncores=(4)
+#ncores=(4)
 #ncores=(1)
-#ncores=(4 8 16)
+ncores=(1 2 4 8 16)
 foldername=tpcc_events250
 
 echo "Starting sweep for ncores"
