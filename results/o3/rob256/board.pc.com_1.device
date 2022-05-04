@@ -20,8 +20,8 @@ CPU MTRRs all blank - virtualized system.
 x86/PAT: Configuration [0-7]: WB  WT  UC- UC  WB  WT  UC- UC  
 found SMP MP-table at [mem 0x000f0050-0x000f005f]
 ACPI: Early table checksum verification disabled
-ACPI: RSDP 0x00000000000F0240 000024 (v02       )
-ACPI: XSDT 0x00000000000F0288 000024 (v01                 00000000      00000000)
+ACPI: RSDP 0x00000000000F01B0 000024 (v02       )
+ACPI: XSDT 0x00000000000F01F8 000024 (v01                 00000000      00000000)
 ACPI BIOS Error (bug): Invalid table length 0x24 in RSDT/XSDT (20190816/tbutils-291)
 Zone ranges:
   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
@@ -38,33 +38,26 @@ MPTABLE: OEM ID:
 MPTABLE: Product ID: 
 MPTABLE: APIC at: 0xFEE00000
 Processor #0 (Bootup-CPU)
-Processor #1
-Processor #2
-Processor #3
-Processor #4
-Processor #5
-Processor #6
-Processor #7
-IOAPIC[0]: apic_id 8, version 20, address 0xfec00000, GSI 0-23
-Processors: 8
-smpboot: Allowing 8 CPUs, 0 hotplug CPUs
+IOAPIC[0]: apic_id 1, version 20, address 0xfec00000, GSI 0-23
+Processors: 1
+smpboot: Allowing 1 CPUs, 0 hotplug CPUs
 [mem 0x80000000-0xfffeffff] available for PCI devices
 Booting paravirtualized kernel on bare hardware
 clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
-setup_percpu: NR_CPUS:8192 nr_cpumask_bits:8 nr_cpu_ids:8 nr_node_ids:1
-percpu: Embedded 49 pages/cpu s160856 r8192 d31656 u262144
+setup_percpu: NR_CPUS:8192 nr_cpumask_bits:1 nr_cpu_ids:1 nr_node_ids:1
+percpu: Embedded 49 pages/cpu s160856 r8192 d31656 u2097152
 Built 1 zonelists, mobility grouping on.  Total pages: 517001
 Kernel command line: earlyprintk=ttyS0 console=ttyS0 lpj=7999923 root=/dev/hda1
 Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
 Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
 mem auto-init: stack:off, heap alloc:off, heap free:off
-Memory: 2042816K/2096760K available (8195K kernel code, 1281K rwdata, 2088K rodata, 1192K init, 1888K bss, 53944K reserved, 0K cma-reserved)
+Memory: 2044184K/2096760K available (8195K kernel code, 1281K rwdata, 2088K rodata, 1192K init, 1888K bss, 52576K reserved, 0K cma-reserved)
 Kernel/User page tables isolation: enabled
 rcu: Hierarchical RCU implementation.
-rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=8.
+rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=1.
 rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
-rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=8
-NR_IRQS: 524544, nr_irqs: 488, preallocated irqs: 16
+rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+NR_IRQS: 524544, nr_irqs: 256, preallocated irqs: 16
 random: get_random_bytes called from start_kernel+0x304/0x4e6 with crng_init=0
 Console: colour dummy device 80x25
 printk: console [ttyS0] enabled
@@ -93,32 +86,17 @@ smpboot: CPU0: M5 Simulator Fake M5 x86_64 CPU (family: 0xf, model: 0x25, steppi
 Performance Events: no PMU driver, software events only.
 rcu: Hierarchical SRCU implementation.
 smp: Bringing up secondary CPUs ...
-x86: Booting SMP configuration:
-.... node  #0, CPUs:      #1
-[Firmware Bug]: CPU1: APIC id mismatch. Firmware: 1 APIC: 0
- #2
-[Firmware Bug]: CPU2: APIC id mismatch. Firmware: 2 APIC: 0
- #3
-[Firmware Bug]: CPU3: APIC id mismatch. Firmware: 3 APIC: 0
- #4
-[Firmware Bug]: CPU4: APIC id mismatch. Firmware: 4 APIC: 0
- #5
-[Firmware Bug]: CPU5: APIC id mismatch. Firmware: 5 APIC: 0
- #6
-[Firmware Bug]: CPU6: APIC id mismatch. Firmware: 6 APIC: 0
- #7
-[Firmware Bug]: CPU7: APIC id mismatch. Firmware: 7 APIC: 0
-smp: Brought up 1 node, 8 CPUs
-smpboot: Max logical packages: 8
-smpboot: Total of 8 processors activated (127998.76 BogoMIPS)
+smp: Brought up 1 node, 1 CPU
+smpboot: Max logical packages: 1
+smpboot: Total of 1 processors activated (15999.84 BogoMIPS)
 devtmpfs: initialized
 clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
-futex hash table entries: 2048 (order: 5, 131072 bytes, linear)
+futex hash table entries: 256 (order: 2, 16384 bytes, linear)
 NET: Registered protocol family 16
 audit: initializing netlink subsys (disabled)
-audit: type=2000 audit(1325376000.499:1): state=initialized audit_enabled=0 res=1
 cpuidle: using governor ladder
 PCI: Using configuration type 1 for base access
+audit: type=2000 audit(1325376000.246:1): state=initialized audit_enabled=0 res=1
 unchecked MSR access error: RDMSR from 0x1b0 at rIP: 0xffffffff81022534 (native_read_msr.constprop.3+0x6/0x32)
 Call Trace:
  ? intel_epb_restore+0x7a/0x7a
@@ -240,6 +218,7 @@ i8042: Probing ports directly.
 serio: i8042 KBD port at 0x60,0x64 irq 1
 serio: i8042 AUX port at 0x60,0x64 irq 12
 mousedev: PS/2 mouse device common for all mice
+input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input0
 usbcore: registered new interface driver usbhid
 usbhid: USB HID core driver
 NET: Registered protocol family 17
@@ -249,7 +228,6 @@ Unstable clock detected, switching default tracing clock to "global"
 If you want to keep using the local clock, then add:
   "trace_clock=local"
 on the kernel command line
-input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input0
 random: fast init done
 EXT4-fs (hda1): recovery complete
 EXT4-fs (hda1): mounted filesystem with ordered data mode. Opts: (null)
@@ -271,75 +249,75 @@ systemd[1]: Set hostname to <gem5-host>.
 systemd[1]: File /lib/systemd/system/systemd-journald.service:36 configures an IP firewall (IPAddressDeny=any), but the local system does not support BPF/cgroup based firewalling.
 systemd[1]: Proceeding WITHOUT firewalling in effect! (This warning is only shown for the first loaded unit using IP firewalling.)
 random: systemd: uninitialized urandom read (16 bytes read)
-systemd[1]: Created slice System Slice.
-[[0;32m  OK  [0m] Created slice System Slice.
-random: systemd: uninitialized urandom read (16 bytes read)
-systemd[1]: Created slice system-serial\x2dgetty.slice.
-[[0;32m  OK  [0m] Created slice system-serial\x2dgetty.slice.
+systemd[1]: Reached target Remote File Systems.
+[[0;32m  OK  [0m] Reached target Remote File Systems.
 random: systemd: uninitialized urandom read (16 bytes read)
 systemd[1]: Created slice User and Session Slice.
 [[0;32m  OK  [0m] Created slice User and Session Slice.
-systemd[1]: Reached target User and Group Name Lookups.
-[[0;32m  OK  [0m] Reached target User and Group Name Lookups.
-systemd[1]: Reached target Slices.
-[[0;32m  OK  [0m] Reached target Slices.
-[[0;32m  OK  [0m] Listening on /dev/initctl Compatibility Named Pipe.
-[[0;32m  OK  [0m] Listening on Syslog Socket.
-[[0;32m  OK  [0m] Created slice system-postgresql.slice.
-[[0;32m  OK  [0m] Listening on udev Kernel Socket.
+random: systemd: uninitialized urandom read (16 bytes read)
+systemd[1]: Created slice System Slice.
+[[0;32m  OK  [0m] Created slice System Slice.
+systemd[1]: Listening on Journal Socket (/dev/log).
 [[0;32m  OK  [0m] Listening on Journal Socket (/dev/log).
+systemd[1]: Listening on /dev/initctl Compatibility Named Pipe.
+[[0;32m  OK  [0m] Listening on /dev/initctl Compatibility Named Pipe.
 [[0;32m  OK  [0m] Listening on udev Control Socket.
-[[0;32m  OK  [0m] Started Forward Password Requests to Wall Directory Watch.
+[[0;32m  OK  [0m] Created slice system-postgresql.slice.
 [[0;32m  OK  [0m] Listening on fsck to fsckd communication Socket.
+[[0;32m  OK  [0m] Listening on Syslog Socket.
+[[0;32m  OK  [0m] Created slice system-serial\x2dgetty.slice.
+[[0;32m  OK  [0m] Listening on udev Kernel Socket.
 [[0;32m  OK  [0m] Listening on Journal Audit Socket.
+[[0;32m  OK  [0m] Reached target Slices.
 [[0;32m  OK  [0m] Listening on Journal Socket.
-[[0;32m  OK  [0m] Started Read required files in advance.
          Starting Uncomplicated firewall...
          Starting Set the console keyboard layout...
-         Starting Remount Root and Kernel File SysEXT4-fs (hda1): re-mounted. Opts: errors=remount-ro
-tems...
+         Mounting Huge Pages File System...
+         Starting Remount Root and Kernel FileEXT4-fs (hda1): re-mounted. Opts: errors=remount-ro
+ Systems...
          Mounting Kernel Debug File System...
-         Starting udev Coldplug all Devices...
          Starting Journal Service...
          Mounting POSIX Message Queue File System...
          Starting Load Kernel Modules...
-         Mounting Huge Pages File System...
+         Starting udev Coldplug all Devices...
          Starting Create Static Device Nodes in /dev...
-[[0;32m  OK  [0m] Reached target Remote File Systems.
+[[0;32m  OK  [0m] Reached target User and Group Name Lookups.
+[[0;32m  OK  [0m] Started Read required files in advance.
+[[0;32m  OK  [0m] Started Forward Password Requests to Wall Directory Watch.
 [[0;32m  OK  [0m] Started Journal Service.
 [[0;32m  OK  [0m] Started Uncomplicated firewall.
 [[0;32m  OK  [0m] Started Set the console keyboard layout.
+[[0;32m  OK  [0m] Mounted Huge Pages File System.
 [[0;32m  OK  [0m] Started Remount Root and Kernel File Systems.
 [[0;32m  OK  [0m] Mounted Kernel Debug File System.
 [[0;32m  OK  [0m] Mounted POSIX Message Queue File System.
 [[0;32m  OK  [0m] Started Load Kernel Modules.
-[[0;32m  OK  [0m] Mounted Huge Pages File System.
 [[0;32m  OK  [0m] Started Create Static Device Nodes in /dev.
 [[0;32m  OK  [0m] Started udev Coldplug all Devices.
+         Mounting Kernel Configuration File System...
          Starting Apply Kernel Variables...
          Mounting FUSE Control File System...
-         Mounting Kernel Configuration File System...
-         Activating swap /swapfile...
          Starting Load/Save Random Seed...
+         Activating swap /swapfile...
          Starting udev Kernel Device Manager...
 [[0;32m  OK  [0m] Reached target Local File Systems (Pre).
 [[0;32m  OK  [0m] Reached target Local File Systems.
-         Starting Tell Plymouth To Write Out Runtime Data...
          Starting Set console font and keymap...
+         Starting Tell Plymouth To Write Out Runtime Data...
          Starting Flush Journal to Persistent Storage...
 [[0;32m  OK  [0m] Activated swap /swapfile.
 [[0;32m  OK  [0m] Started udev Kernel Device Manager.
+[[0;32m  OK  [0m] Mounted Kernel Configuration File System.
 [[0;32m  OK  [0m] Started Apply Kernel Variables.
 [[0;32m  OK  [0m] Mounted FUSE Control File System.
-[[0;32m  OK  [0m] Mounted Kernel Configuration File System.
 [[0;32m  OK  [0m] Started Load/Save Random Seed.
-[[0;32m  OK  [0m] Started Tell Plymouth To Write Out Runtime Data.
 [[0;32m  OK  [0m] Started Set console font and keymap.
+[[0;32m  OK  [0m] Started Tell Plymouth To Write Out Runtime Data.
 [[0;32m  OK  [0m] Found device /dev/ttyS0.
+         Starting Network Service...
 [[0;32m  OK  [0m] Started Dispatch Password Requests to Console Directory Watch.
 [[0;32m  OK  [0m] Reached target Local Encrypted Volumes.
 [[0;32m  OK  [0m] Reached target Paths.
-         Starting Network Service...
 [[0;32m  OK  [0m] Reached target Swap.
 [[0;32m  OK  [0m] Started Network Service.
 [[0;32m  OK  [0m] Started Flush Journal to Persistent Storage.
@@ -355,43 +333,43 @@ tems...
 [[0;32m  OK  [0m] Reached target System Time Synchronized.
 [[0;32m  OK  [0m] Started Update UTMP about System Boot/Shutdown.
 [[0;32m  OK  [0m] Reached target System Initialization.
-[[0;32m  OK  [0m] Started Daily apt download activities.
-[[0;32m  OK  [0m] Listening on UUID daemon activation socket.
-[[0;32m  OK  [0m] Started Daily apt upgrade and clean activities.
-[[0;32m  OK  [0m] Listening on D-Bus System Message Bus Socket.
-[[0;32m  OK  [0m] Reached target Sockets.
-[[0;32m  OK  [0m] Started Message of the Day.
 [[0;32m  OK  [0m] Started Discard unused blocks once a week.
+[[0;32m  OK  [0m] Listening on D-Bus System Message Bus Socket.
 [[0;32m  OK  [0m] Started Daily Cleanup of Temporary Directories.
-[[0;32m  OK  [0m] Reached target Timers.
+[[0;32m  OK  [0m] Listening on UUID daemon activation socket.
+[[0;32m  OK  [0m] Reached target Sockets.
 [[0;32m  OK  [0m] Reached target Basic System.
-         Starting Dispatcher daemon for systemd-networkd...
-         Starting PostgreSQL Cluster 10-main...
-         Starting System Logging Service...
-         Starting OpenBSD Secure Shell server...
-         Starting LSB: Record successful boot for GRUB...
 [[0;32m  OK  [0m] Started Set the CPU Frequency Scaling governor.
-         Starting Login Service...
 [[0;32m  OK  [0m] Started irqbalance daemon.
-[[0;32m  OK  [0m] Started D-Bus System Message Bus.
-[[0;32m  OK  [0m] Started Login Service.
-         Starting Resets System Activity Data Collector...
-         Starting Accounts Service...
 [[0;32m  OK  [0m] Started Regular background program processing daemon.
+         Starting PostgreSQL Cluster 10-main...
+         Starting Resets System Activity Data Collector...
+[[0;32m  OK  [0m] Started D-Bus System Message Bus.
          Starting Permit User Sessions...
+         Starting Dispatcher daemon for systemd-networkd...
+         Starting LSB: Record successful boot for GRUB...
+[[0;32m  OK  [0m] Started Daily apt download activities.
+         Starting System Logging Service...
+         Starting Login Service...
+[[0;32m  OK  [0m] Started Message of the Day.
+         Starting OpenBSD Secure Shell server...
+         Starting Accounts Service...
+[[0;32m  OK  [0m] Started Daily apt upgrade and clean activities.
+[[0;32m  OK  [0m] Reached target Timers.
 [[0;32m  OK  [0m] Started System Logging Service.
 [[0;32m  OK  [0m] Started Resets System Activity Data Collector.
-[[0;32m  OK  [0m] Started OpenBSD Secure Shell server.
 [[0;32m  OK  [0m] Started Permit User Sessions.
-[[0;32m  OK  [0m] Started Accounts Service.
-         Starting Terminate Plymouth Boot Screen...
-         Starting Hold until boot process finishes up...
-[[0;32m  OK  [0m] Started Dispatcher daemon for systemd-networkd.
+[[0;32m  OK  [0m] Started Login Service.
 [[0;32m  OK  [0m] Started LSB: Record successful boot for GRUB.
-[[0;32m  OK  [0m] Started Terminate Plymouth Boot Screen.
+[[0;32m  OK  [0m] Started Accounts Service.
+[[0;32m  OK  [0m] Started OpenBSD Secure Shell server.
+         Starting Hold until boot process finishes up...
+         Starting Terminate Plymouth Boot Screen...
+[[0;32m  OK  [0m] Started Dispatcher daemon for systemd-networkd.
 [[0;32m  OK  [0m] Started Hold until boot process finishes up.
-[[0;32m  OK  [0m] Started Serial Getty on ttyS0.
+[[0;32m  OK  [0m] Started Terminate Plymouth Boot Screen.
          Starting Set console scheme...
+[[0;32m  OK  [0m] Started Serial Getty on ttyS0.
 [[0;32m  OK  [0m] Started Set console scheme.
 [[0;32m  OK  [0m] Created slice system-getty.slice.
 [[0;32m  OK  [0m] Started Getty on tty1.
@@ -428,7 +406,7 @@ WARNING: --max-requests is deprecated, use --events instead
 sysbench 1.0.11 (using system LuaJIT 2.1.0-beta3)
 
 Running the test with following options:
-Number of threads: 8
+Number of threads: 1
 Report intermediate results every 1 second(s)
 Initializing random number generator from current time
 
@@ -436,27 +414,34 @@ Initializing random number generator from current time
 Initializing worker threads...
 
 DB SCHEMA public
-DB SCHEMA public
-DB SCHEMA public
-DB SCHEMA public
-DB SCHEMA public
-DB SCHEMA public
-DB SCHEMA public
-DB SCHEMA public
 Threads started!
 
-[ 1s ] thds: 8 tps: 56.78 qps: 1549.04 (r/w/o: 705.29/706.28/137.47) lat (ms,95%): 292.60 err/s 0.00 reconn/s: 0.00
-[ 2s ] thds: 8 tps: 81.01 qps: 2363.36 (r/w/o: 1077.16/1124.17/162.02) lat (ms,95%): 282.25 err/s 0.00 reconn/s: 0.00
+[ 1s ] thds: 1 tps: 39.89 qps: 1285.34 (r/w/o: 596.30/606.27/82.76) lat (ms,95%): 51.94 err/s 0.00 reconn/s: 0.00
+[ 2s ] thds: 1 tps: 55.01 qps: 1341.20 (r/w/o: 602.09/629.10/110.02) lat (ms,95%): 44.98 err/s 0.00 reconn/s: 0.00
 SQL statistics:
     queries performed:
-        read:                            3120
-        write:                           3240
-        other:                           516
-        total:                           6876
-    transactions:                        250    (83.60 per sec.)
-    queries:                             6876   (2299.25 per sec.)
-    ignored errors:                      1      (0.33 per sec.)
+        read:                            1616
+        write:                           1684
+        other:                           252
+        total:                           3552
+    transactions:                        125    (48.65 per sec.)
+    queries:                             3552   (1382.31 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
     reconnects:                          0      (0.00 per sec.)
 
 General statistics:
-    total time:                         
+    total time:                          2.5666s
+    total number of events:              125
+
+Latency (ms):
+         min:                                  2.00
+         avg:                                 20.53
+         max:                                 88.99
+         95th percentile:                     46.63
+         sum:                               2566.61
+
+Threads fairness:
+    events (avg/stddev):           125.0000/0.00
+    execution time (avg/stddev):   2.5666/0.00
+
+Done running script, exiting.
