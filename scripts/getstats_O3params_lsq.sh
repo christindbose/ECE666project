@@ -11,7 +11,9 @@ for size in "${lsq[@]}"; do
     name=${foldername}${size}
     cd ../results/o3/$name
     ipc=$(grep "totalIpc" stats.txt | grep -o -E '\s[0-9].[0-9]+')
-    echo ${size} $ipc | tee -a $dir/rob.txt
+    fullevents=$(grep "lsqFullEvents" stats.txt | grep -o -E '\s[0-9].[0-9]+')
+    
+    echo ${size} $ipc $fullevents| tee -a $dir/lsq.txt
     cd $dir
 done
 
